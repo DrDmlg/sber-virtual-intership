@@ -10,5 +10,9 @@ public interface ActionList {
 
     List<City> sortedByDistrictAndName(List<City> list);
 
+    int[] convertListCitiesToArray(List<City> list);
+
+    void findIndexElementWithLargestNumberCityPopulation(int[] array);
+
     void print(List<City> list);
 }

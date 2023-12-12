@@ -25,7 +25,27 @@ public class ActionListImpl implements ActionList {
     }
 
     @Override
-    public void print(List<City> list) {
-        list.forEach(System.out::println);
+    public int[] convertListCitiesToArray(List<City> list) {
+        return list.stream()
+                .mapToInt(City::getPopulation)
+                .toArray();
     }
-}
+
+    @Override
+    public void findIndexElementWithLargestNumberCityPopulation(int[] array) {
+        int index = 0;
+        int maxPopulation = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxPopulation) {
+                maxPopulation = array[i];
+                index = i;
+            }
+        }
+        System.out.printf("Index: %d Population: %d " , index, maxPopulation);
+    }
+
+        @Override
+        public void print (List < City > list) {
+            list.forEach(System.out::println);
+        }
+    }
