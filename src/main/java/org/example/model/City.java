@@ -7,7 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class City {
-    private Long id;
     private String name;
     private String region;
     private String district;

@@ -1,16 +1,23 @@
 package org.example;
 
 import org.example.model.City;
-import org.example.repository.CityReader;
-import org.example.service.CityCsvReader;
+import org.example.service.ActionListImpl;
+import org.example.service.CsvFileReader;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        CityReader reader = new CityCsvReader();
-        List<City> cities = reader.csvFileReader("src/main/resources/Task_BC_Java_Sber.csv");
 
-        cities.forEach(System.out::println);
+    public static void main(String[] args) throws FileNotFoundException {
+        CsvFileReader reader = new CsvFileReader();
+        List<City> cities = reader.readLineFromFile("src/main/resources/dictionary.csv");
+        ActionListImpl actionList = new ActionListImpl();
+
+        actionList.print(cities);
+
+        actionList.print(actionList.sortedByNameDesc(cities));
+
+        actionList.print(actionList.sortedByDistrictAndName(cities));
     }
 }
