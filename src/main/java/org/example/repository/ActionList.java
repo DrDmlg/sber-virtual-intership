@@ -3,7 +3,6 @@ package org.example.repository;
 import org.example.model.City;
 
 import java.util.List;
-import java.util.Map;
 
 public interface ActionList {
 

@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class CsvFileReader {
 
-    private final String DELIMITER = ";";
+    private static final String DELIMITER = ";";
 
     public List<City> readLineFromFile(String path) throws FileNotFoundException {
         List<City> cities = new ArrayList<>();
