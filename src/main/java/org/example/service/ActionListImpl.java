@@ -4,7 +4,10 @@ import org.example.model.City;
 import org.example.repository.ActionList;
 
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ActionListImpl implements ActionList {
 
@@ -41,11 +44,18 @@ public class ActionListImpl implements ActionList {
                 index = i;
             }
         }
-        System.out.printf("Index: %d Population: %d " , index, maxPopulation);
+        System.out.printf("Index: %d Population: %d ", index, maxPopulation);
     }
 
-        @Override
-        public void print (List < City > list) {
-            list.forEach(System.out::println);
-        }
+    @Override
+    public void findCountCitiesEachRegion(List<City> list) {
+        list.stream()
+                .collect(Collectors.groupingBy(City::getRegion, Collectors.counting()))
+                .forEach((k, v) -> System.out.println(k + " - " + v));
     }
+
+    @Override
+    public void print(List<City> list) {
+        list.forEach(System.out::println);
+    }
+}

@@ -7,6 +7,7 @@ import org.example.service.CsvFileReader;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -23,5 +24,7 @@ public class Main {
 
         int[] array = actionList.convertListCitiesToArray(cities);
         actionList.findIndexElementWithLargestNumberCityPopulation(array);
+
+        actionList.findCountCitiesEachRegion(cities);
     }
 }

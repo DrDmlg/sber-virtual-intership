@@ -3,6 +3,7 @@ package org.example.repository;
 import org.example.model.City;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ActionList {
 
@@ -13,6 +14,8 @@ public interface ActionList {
     int[] convertListCitiesToArray(List<City> list);
 
     void findIndexElementWithLargestNumberCityPopulation(int[] array);
+
+    void findCountCitiesEachRegion(List<City> list);
 
     void print(List<City> list);
 }
